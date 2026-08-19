@@ -1,0 +1,232 @@
+.certificate-page-container {
+  min-height: 100vh;
+  background-color: #09090b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.certificate-actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  width: 100%;
+  max-width: 900px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-back {
+  color: #a1a1aa;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.btn-back:hover {
+  color: #10b981;
+}
+
+.btn-download {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+  transition: transform 0.2s;
+}
+
+.btn-download:hover {
+  transform: translateY(-1px);
+}
+
+/* Certificate Design Card */
+.certificate-card {
+  width: 100%;
+  max-width: 900px;
+  background: #121214;
+  border: 2px solid #27272a;
+  border-radius: 20px;
+  padding: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+}
+
+.cert-border-pattern {
+  border: 1px dashed #3f3f46;
+  border-radius: 14px;
+  padding: 48px;
+  text-align: center;
+  background: radial-gradient(circle at center, #18181b 0%, #121214 100%);
+}
+
+.cert-header-badge {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #34d399;
+  margin-bottom: 24px;
+}
+
+.cert-subtext {
+  color: #a1a1aa;
+  font-size: 1rem;
+  margin-bottom: 12px;
+}
+
+.cert-student-name {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 16px 0;
+  background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-bottom: 2px solid #10b981;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+.cert-description {
+  color: #a1a1aa;
+  font-size: 0.95rem;
+  max-width: 600px;
+  margin: 0 auto 20px auto;
+  line-height: 1.6;
+}
+
+.cert-course-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #f4f4f5;
+  margin-bottom: 48px;
+}
+
+.cert-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid #27272a;
+  padding-top: 24px;
+}
+
+.cert-signature, .cert-date-box {
+  text-align: center;
+}
+
+.signature-line {
+  width: 150px;
+  height: 1px;
+  background-color: #52525b;
+  margin-bottom: 8px;
+}
+
+.cert-signature p, .cert-date-box p {
+  color: #71717a;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.date-value {
+  color: #f4f4f5 !important;
+  font-weight: 600;
+  margin-bottom: 4px !important;
+}
+
+/* Print Friendly Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+  }
+  .certificate-page-container {
+    background: white !important;
+    padding: 0;
+  }
+  .certificate-card {
+    background: white !important;
+    border: 5px solid #10b981 !important;
+    box-shadow: none !important;
+  }
+  .cert-border-pattern {
+    background: white !important;
+    border: 1px solid #d4d4d8 !important;
+  }
+  .cert-student-name {
+    -webkit-text-fill-color: #000 !important;
+    color: #000 !important;
+  }
+  .cert-subtext, .cert-description, .cert-signature p, .cert-date-box p {
+    color: #52525b !important;
+  }
+  .cert-course-title {
+    color: #000 !important;
+  }
+  .date-value {
+    color: #000 !important;
+  }
+}
+/* ==========================================
+   PRINT-ONLY FIX (Sirf Certificate Print Hoga)
+   ================================---------- */
+@media print {
+  /* Baaki saari body aur layout ko hide kar do */
+  body * {
+    visibility: hidden;
+  }
+
+  /* Sirf certificate card aur uske andar ka content visible rahega */
+  .certificate-card, 
+  .certificate-card * {
+    visibility: visible;
+  }
+
+  /* Certificate card ko page ke top-left par stretch kar do */
+  .certificate-card {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 10px;
+    background: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .certificate-page-container {
+    background: #ffffff !important;
+    padding: 0 !important;
+  }
+
+  .cert-border-pattern {
+    background: #ffffff !important;
+    border: 2px solid #10b981 !important;
+  }
+
+  .cert-student-name {
+    -webkit-text-fill-code: #000000 !important;
+    color: #000000 !important;
+  }
+
+  .cert-subtext, .cert-description, .cert-signature p, .cert-date-box p {
+    color: #52525b !important;
+  }
+
+  .cert-course-title {
+    color: #000000 !important;
+  }
+
+  .date-value {
+    color: #000000 !important;
+  }
+}

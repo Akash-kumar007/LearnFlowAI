@@ -1,0 +1,314 @@
+/* ==========================================
+   1. GLOBAL LAYOUT & THEME
+   ================================---------- */
+.course-detail-layout {
+  display: flex;
+  gap: 28px;
+  padding: 32px;
+  background-color: #09090b;
+  min-height: 100vh;
+  color: #f4f4f5;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+.course-content-area {
+  flex: 1;
+  max-width: 72%;
+}
+
+/* Back Navigation */
+.back-nav {
+  margin-bottom: 20px;
+}
+
+.back-nav a {
+  color: #a1a1aa;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.back-nav a:hover {
+  color: #10b981;
+}
+
+.course-content-area h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: #ffffff;
+  letter-spacing: -0.025em;
+  background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================
+   2. VIDEO PLAYER BOX
+   ================================---------- */
+.video-player-container {
+  width: 100%;
+  background-color: #121214;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #27272a;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.3s ease;
+}
+
+.video-player-container:hover {
+  border-color: #3f3f46;
+}
+
+.video-mock-screen {
+  width: 100%;
+  position: relative;
+  background-color: #000;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.video-mock-screen video {
+  display: block;
+  width: 100%;
+  max-height: 450px;
+  object-fit: cover;
+}
+
+.video-placeholder {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #a1a1aa;
+  background: radial-gradient(circle at center, #18181b 0%, #09090b 100%);
+}
+
+.play-icon-large {
+  font-size: 3.5rem;
+  color: #10b981;
+  margin-bottom: 12px;
+  animation: pulseGlow 2s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.08); text-shadow: 0 0 20px rgba(16, 185, 129, 0.5); }
+}
+
+/* ==========================================
+   3. LECTURE DETAILS & TRANSCRIPT
+   ================================---------- */
+.module-details {
+  margin-top: 24px;
+  padding: 28px;
+  background: #121214;
+  border: 1px solid #27272a;
+  border-radius: 16px;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.module-details h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.transcript-text {
+  color: #a1a1aa;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  margin-top: 10px;
+}
+
+.complete-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #27272a;
+  color: white;
+  border: 1px solid #3f3f46;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.complete-btn:hover {
+  background-color: #3f3f46;
+  transform: translateY(-1px);
+}
+
+.complete-btn.completed {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-color: #10b981;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+/* ==========================================
+   4. CURRICULUM / MODULES LIST
+   ================================---------- */
+.modules-list-box {
+  margin-top: 24px;
+  background-color: #121214;
+  border: 1px solid #27272a;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.modules-list-box h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #27272a;
+  padding-bottom: 12px;
+}
+
+.module-group {
+  margin-bottom: 20px;
+}
+
+.module-group-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e4e4e7;
+  margin-bottom: 12px;
+}
+
+.module-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 18px;
+  background: #18181b;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border: 1px solid #27272a;
+  transition: all 0.2s ease;
+}
+
+.module-item:hover {
+  background: #27272a;
+  border-color: #3f3f46;
+  transform: translateX(4px);
+}
+
+.module-item.active {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(24, 24, 27, 0.8) 100%);
+  border: 1px solid #10b981;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.1);
+}
+
+.lecture-title {
+  color: #f4f4f5;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.mod-duration {
+  color: #a1a1aa;
+  font-size: 0.85rem;
+  background: #27272a;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+/* ==========================================
+   5. CERTIFICATE UNLOCK BOX
+   ================================---------- */
+.certificate-unlock-box {
+  margin-top: 28px;
+  padding: 28px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(5, 150, 105, 0.05) 100%);
+  border: 1px solid #10b981;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(16, 185, 129, 0.15);
+}
+
+.certificate-text {
+  color: #34d399;
+  margin: 0 0 12px 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.btn-certificate {
+  display: inline-block;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+  transition: all 0.2s ease;
+}
+
+.btn-certificate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.6);
+}
+
+/* ==========================================
+   6. AI STUDY ASSISTANT (AIChat Sidebar)
+   ================================---------- */
+.course-ai-sidebar {
+  width: 380px;
+  flex-shrink: 0;
+  background-color: #121214;
+  border: 1px solid #27272a;
+  border-radius: 16px;
+  height: calc(100vh - 64px);
+  position: sticky;
+  top: 32px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Custom styling for AIChat internal component containers if rendered inside sidebar */
+.course-ai-sidebar header, 
+.course-ai-sidebar .ai-chat-header {
+  background: linear-gradient(135deg, #18181b 0%, #121214 100%);
+  border-bottom: 1px solid #27272a;
+  padding: 16px 20px;
+  font-weight: 600;
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ==========================================
+   7. RESPONSIVE DESIGN (MOBILE & TABLET)
+   ================================---------- */
+@media (max-width: 1024px) {
+  .course-detail-layout {
+    flex-direction: column;
+    padding: 16px;
+  }
+  
+  .course-content-area {
+    max-width: 100%;
+  }
+
+  .course-ai-sidebar {
+    width: 100%;
+    height: 550px;
+    position: static;
+    margin-top: 24px;
+  }
+}

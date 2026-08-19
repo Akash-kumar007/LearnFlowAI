@@ -1,0 +1,140 @@
+.certificate-page-container {
+  padding: 40px 20px;
+  background: #09090b;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.back-btn {
+  background: #18181b;
+  border: 1px solid #27272a;
+  color: #a1a1aa;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-bottom: 20px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.back-btn:hover {
+  color: #38bdf8;
+  border-color: #38bdf8;
+}
+
+.certificate-box {
+  background: linear-gradient(135deg, #121214 0%, #1a1a1e 100%);
+  border: 2px solid #38bdf8;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 800px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(56, 189, 248, 0.15);
+  position: relative;
+}
+
+.cert-header h2 {
+  margin: 0;
+  color: #38bdf8;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.cert-header p {
+  margin: 4px 0 0 0;
+  color: #a1a1aa;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cert-body {
+  margin: 40px 0;
+}
+
+.cert-subtext {
+  color: #a1a1aa;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.cert-student-name {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 10px 0;
+  border-bottom: 2px solid #27272a;
+  display: inline-block;
+  padding: 0 30px;
+  font-family: serif;
+}
+
+.cert-desc {
+  color: #d4d4d8;
+  font-size: 0.95rem;
+  max-width: 600px;
+  margin: 15px auto 0 auto;
+  line-height: 1.5;
+}
+
+.cert-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #27272a;
+}
+
+.cert-signature {
+  text-align: center;
+}
+
+.sign-line {
+  margin: 0;
+  color: #71717a;
+  font-size: 0.8rem;
+}
+
+.sign-title {
+  margin: 4px 0 0 0;
+  font-size: 0.8rem;
+  color: #a1a1aa;
+}
+
+.cert-badge {
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px dashed #38bdf8;
+  padding: 8px 14px;
+  border-radius: 8px;
+  color: #38bdf8;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.cert-actions {
+  margin-top: 30px;
+}
+
+.download-cert-btn {
+  background: #38bdf8;
+  color: #000;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+}
+
+.download-cert-btn:hover {
+  background: #0ea5e9;
+  transform: translateY(-2px);
+}

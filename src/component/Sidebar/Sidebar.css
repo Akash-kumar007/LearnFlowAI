@@ -1,0 +1,107 @@
+/* AI Dashboard Style Sidebar */
+.sidebar {
+  width: 260px;
+  background-color: #171717;
+  border-right: 2px solid #2f2f2f;
+  padding: 24px 16px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidebar-logo {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 32px;
+  padding-left: 12px;
+  letter-spacing: -0.5px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #a1a1aa;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  transition: all 0.25s ease;
+}
+
+.sidebar-link:hover {
+  background-color: #212121;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 
+    12px 0 30px rgba(255, 255, 255, 0.12),
+    0 0 20px rgba(255, 255, 255, 0.08);
+}
+
+.sidebar-link:active {
+  background-color: #2b2b2b;
+}
+
+/* ==========================================
+   📱 MOBILE RESPONSIVE STYLES (≤768px)
+   ========================================== */
+
+.sidebar-toggle-btn {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* 1. Off-Canvas Drawer (Left-aligned) */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 99999;
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.8);
+  }
+
+  /* 2. Toggle Button Fixed at TOP-LEFT */
+  .sidebar-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 60px; /* Admin Floating bar ke neeche shift karne ke liye offset */
+    left: 16px; /* Top-Left corner par align kar diya */
+    z-index: 100000;
+    background-color: #1e293b;
+    color: #ffffff;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+  }
+
+  /* 3. Dark Backdrop Overlay */
+  .sidebar-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(3px);
+    z-index: 99998;
+  }
+}
